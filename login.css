@@ -1,0 +1,82 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #000000, #00475D, #00AF7F);
+    color: white;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 320px;
+    padding: 20px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px auto;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    color: #cccccc;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    background-color: #A0A0A0;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.form-group input::placeholder {
+    color: #333;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #333;
+}

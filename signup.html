@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/signup.css">
+</head>
+<body>
+
+    <div class="container">
+        <img src="/static/logo.png" alt="Logo" class="logo">
+        <h1>Create new Account</h1>
+        <p class="subtitle">Already Registered? <a href="/login" style="color: rgba(255, 255, 255, 0.7); text-decoration: underline;">Log in here.</a></p>
+
+        <!-- Form submits to the '/signup' route with method POST -->
+        <form id="signup-form" method="POST" action="/signup">
+            <div class="form-group">
+                <label for="name">NAME</label>
+                <input type="text" name="name" id="name" placeholder="Jiara Martins" required>
+            </div>
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="email" name="email" id="email" placeholder="hello@reallygreatsite.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">PASSWORD</label>
+                <input type="password" name="password" id="password" placeholder="••••••" required>
+            </div>
+            <button type="submit" class="btn">sign up</button>
+        </form>
+        
+    </div>
+
+</body>
+</html>

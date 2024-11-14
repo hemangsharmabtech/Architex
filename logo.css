@@ -1,0 +1,70 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #000000, #00475D, #00AF7F);
+    color: white;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    width: 320px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.logo {
+    margin: 0 auto 40px; /* Increased bottom margin for more space between logo and buttons */
+}
+
+.logo img {
+    width: 120px; /* Increased width for a larger logo */
+    height: 120px;
+    margin-bottom: 80px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap between buttons */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #333333;
+    transform: scale(1.05); /* Slightly enlarges button on hover */
+}
+
+button:active {
+    transform: scale(0.98); /* Slightly shrinks button on click */
+}

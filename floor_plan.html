@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floor Plan Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='floor_plan.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="App Logo" class="logo">
+    <h1>ARCHITEX</h1>
+    <input type="text" id="prompt-input" placeholder="Enter floor plan description" class="input-field" />
+    <button id="generate-btn" class="generate-btn">Generate Floor Plan</button>
+   
+    <div class="output-box">
+      <img id="generated-image" alt="Generated Floor Plan" style="max-width: 100%; max-height: 100%;" />
+    </div>
+    
+    <input type="checkbox" id="sidebar-toggle">
+<label for="sidebar-toggle" class="sidebar-icon">
+  <i class="fas fa-bars open-icon"></i>
+  <i class="fas fa-times close-icon"></i>
+</label>
+
+<div class="sidebar">
+  <header>ARCHITEX Menu</header>
+  <ul>
+    <li><a href="#"><i class="fas fa-qrcode"></i>Past Conversations</a></li>
+    <li><a href="#"><i class="fas fa-stream"></i>Upgrade Plan</a></li>
+    
+  </ul>
+</div>
+
+   
+    <section></section>
+
+    <script>
+      document.getElementById("generate-btn").addEventListener("click", async function () {
+          const prompt = document.getElementById("prompt-input").value;
+
+          if (!prompt) {
+              alert("Please enter a description for the floor plan.");
+              return;
+          }
+
+          try {
+              const response = await fetch('/generate-image', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ prompt: prompt }),
+              });
+
+              if (!response.ok) {
+                  throw new Error('Failed to generate image');
+              }
+
+              const result = await response.json();
+              document.getElementById("generated-image").src = `data:image/png;base64,${result.image}`;
+          } catch (error) {
+              console.error("Error generating image:", error);
+              alert("An error occurred while generating the image. Please try again.");
+          }
+      });
+    </script>
+</body>
+</html>
